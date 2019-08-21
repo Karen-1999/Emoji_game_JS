@@ -39,6 +39,30 @@ span {
     background: linear-gradient(180deg, lightblue, yellow);
 }
 
+.timer {
+    display: none;
+}
+
+.animate_timer {
+    display: block;
+    font: 40px  "Roboto Light";
+    text-align: center;
+    animation: appear 1s forwards;
+}
+
+.animate_button {
+    opacity:100%;
+    display: block;
+}
+
+@keyframes appear {
+    from {opacity: 0}
+    to{opacity: 100%}
+}
+.timer_box {
+    border: black 2px solid;
+    background: azure;
+}
 
 .ind {
     text-align:center;
@@ -55,28 +79,73 @@ span {
 
   }
 
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.button:hover {
+    transform: scale(1.03);
+    transition-duration: 0.1s;
+}
 .front, .back {
     position: absolute;
     width: 100%; height: 100%;
-    cursor: pointer;
     transition: transform 1s;
     backface-visibility:hidden;
 }
-
+.cursor {
+    cursor: pointer;
+}
 .front {
     border: 1px solid black;
-    background: linear-gradient(45deg, yellow, red);
     perspective: 600px;
     transform-style: preserve-3d;
     transition: transform 1s;
 }
+
+.front_background {
+    background: linear-gradient(45deg, yellow, red);
+}
+
 .back {
     border: 2px solid black;
-    background: linear-gradient(45deg, white, red);
     perspective: 600px;
     transform-style: preserve-3d;
     transition: transform 1s;
     transform: rotateY(180deg);
+}
+
+.back_background {
+    background: linear-gradient(45deg, white, red);
+}
+
+.no_display {
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+}
+
+@keyframes disappear {
+    from{opacity: 100%;}
+    to{opacity: 0;
+        pointer-events: none}
+
+}
+
+.no_item {
 }
 
 .back_none {
@@ -86,6 +155,7 @@ span {
     perspective: 600px;
     transform-style: preserve-3d;
     transition: transform 1s;
+
     transform: rotateY(180deg);
     display: none;
 }
@@ -100,6 +170,14 @@ span {
     transform-style: preserve-3d;
     transition: transform 1s;
     transform: rotateY(360deg);
+}
+
+.error_pair {
+    background: linear-gradient(45deg, red, darkred);
+}
+
+.success_pair {
+    background: linear-gradient(45deg, greenyellow, green);
 }
 /*.card:focus .front{ transform: rotateY(180deg); }
 .card:focus .back { transform: rotateY(360deg); }
