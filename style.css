@@ -6,6 +6,7 @@
 
 .header {
     text-align: center;
+    padding-bottom: 1rem;
 }
 
 span {
@@ -56,6 +57,7 @@ span {
     animation: appear 1s forwards;
 }
 
+
 .animate_button {
     opacity: 100%;
     display: block;
@@ -71,7 +73,7 @@ span {
 }
 
 .timer_box {
-    border: white 1px solid;
+    border: whitesmoke 11px groove;
     border-radius: 100px;
     color: white;
     font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -89,7 +91,7 @@ span {
     position: relative;
     font-size: 5rem;
     text-align-all: center;
-    width: 10rem;
+    width: 8rem;
     height: 10rem;
     perspective: 30rem;
 
