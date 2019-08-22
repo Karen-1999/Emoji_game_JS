@@ -12,16 +12,18 @@ span {
     display: inline-grid;
 
 }
-.back{
+
+.back {
     backface-visibility: hidden;
 }
+
 @keyframes card {
     from {
         content: none;
-        transform: rotate(0) ;
+        transform: rotate(0);
     }
     100% {
-        transform: rotate3d(0,1,0,180deg) ;
+        transform: rotate3d(0, 1, 0, 180deg);
     }
 }
 
@@ -34,9 +36,13 @@ span {
 }
 
 .background {
+    background-image: url("table.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right top;
+    background-attachment: fixed;
     height: 100%;
     position: center;
-    background: linear-gradient(180deg, lightblue, yellow);
 }
 
 .timer {
@@ -45,27 +51,36 @@ span {
 
 .animate_timer {
     display: block;
-    font: 40px  "Roboto Light";
+    font: 40px "Roboto Light";
     text-align: center;
     animation: appear 1s forwards;
 }
 
 .animate_button {
-    opacity:100%;
+    opacity: 100%;
     display: block;
 }
 
 @keyframes appear {
-    from {opacity: 0}
-    to{opacity: 100%}
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 100%
+    }
 }
+
 .timer_box {
-    border: black 2px solid;
-    background: azure;
+    border: white 1px solid;
+    border-radius: 100px;
+    color: white;
+    font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    background: black;
 }
 
 .ind {
-    text-align:center;
+    text-align: center;
     line-height: 140px;
 
 }
@@ -74,62 +89,89 @@ span {
     position: relative;
     font-size: 5rem;
     text-align-all: center;
-    width: 10rem; height: 10rem;
+    width: 10rem;
+    height: 10rem;
     perspective: 30rem;
 
-  }
+}
 
 .button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
+    background: #3498db;
+    width: 180px;
+    padding: 4px 0;
     display: inline-block;
-    font-size: 15px;
-    margin: 4px 2px;
-    cursor: pointer;
+    left: 50%;
+    top: 50%;
+    transform: scale(1.1);
+    border-radius: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFF;
+    user-select: none;
+}
+
+button:hover {
+     cursor: pointer;
+ }
+
+button:after {
+     content: "";
+     display: block;
+     position: absolute;
+     width: 100%;
+     height: 30%;
+     border-radius: 50%;
+     background-color: gray;
+     opacity: 0.3;
+     bottom: -30px;
 }
 
 .wrapper {
     text-align: center;
+    font: 41px "Roboto Light";
+
 }
 
 .button:hover {
     transform: scale(1.03);
     transition-duration: 0.1s;
 }
+
 .front, .back {
     position: absolute;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     transition: transform 1s;
-    backface-visibility:hidden;
+    backface-visibility: hidden;
 }
+
 .cursor {
     cursor: pointer;
 }
+
 .front {
-    border: 1px solid black;
+    border: 3px solid white;
+    border-radius: 12px;
     perspective: 600px;
     transform-style: preserve-3d;
     transition: transform 1s;
 }
 
 .front_background {
-    background: linear-gradient(45deg, yellow, red);
+    background: url("cards.png");
+    background-size: cover;
 }
 
 .back {
-    border: 2px solid black;
-    perspective: 600px;
+    border: 3px solid white;
+    border-radius: 12px;perspective: 600px;
     transform-style: preserve-3d;
     transition: transform 1s;
     transform: rotateY(180deg);
 }
 
 .back_background {
-    background: linear-gradient(45deg, white, red);
+    background: white;
 }
 
 .no_display {
@@ -138,10 +180,15 @@ span {
     pointer-events: none;
 }
 
+
 @keyframes disappear {
-    from{opacity: 100%;}
-    to{opacity: 0;
-        pointer-events: none}
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0;
+        pointer-events: none
+    }
 
 }
 
@@ -179,6 +226,41 @@ span {
 .success_pair {
     background: linear-gradient(45deg, greenyellow, green);
 }
-/*.card:focus .front{ transform: rotateY(180deg); }
-.card:focus .back { transform: rotateY(360deg); }
-*/
+
+.copyright {
+    position: fixed;
+    display: grid;
+    margin-left: 86%;
+    color: wheat;
+    text-align: right;
+    border-bottom-color: white;
+    text-decoration: none;
+}
+
+.shadow {
+    color: wheat;
+    font: 80px Roboto;
+    font-weight: bold;
+    text-shadow:
+            1px 0px 0 gray,
+            2px 1px 0 gray,
+            3px 2px 0 gray,
+            4px 3px 0 gray,
+            5px 4px 0 gray,
+            6px 5px 0 gray,
+            7px 6px 0 gray,
+            1px 1px 0 gray,
+            2px 2px 0 gray,
+            3px 3px 0 gray,
+            4px 4px 0 gray,
+            5px 5px 0 gray,
+            6px 6px 0 gray,
+            7px 7px 0 gray;
+    line-height: 0.8em;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
+    margin:0;
+    text-align: center;
+}
